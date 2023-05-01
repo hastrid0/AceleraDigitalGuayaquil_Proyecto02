@@ -5,6 +5,7 @@ export const Container = styled.div`
     justify-content: center;
 `;
 export const ContainerList = styled.ul`
+  display: flex;
   width: 100%;
   background-color: #fff;
   flex-direction: column;

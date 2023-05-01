@@ -17,7 +17,17 @@ function Home() {
     },[]);
 
     function handleadAddToCart (travel){
-      
+      const copyCart = [...state.cart];
+      const travelIndex = copyCart.findIndex((el)=> el.id === travel.id);
+      if(travelIndex >= 0){
+        copyCart[travelIndex].quantity += 1;
+      }
+      else{
+        copyCart.push({...travel, quantity:1});
+      }
+      setState({
+        cart:copyCart,
+      });
     }
 
     return (
